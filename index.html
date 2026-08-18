@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudassar Abbas - Visual Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #05070a;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* لگژری نیویگیشن بار */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(5, 7, 10, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #d4af37; /* گولڈن کلر */
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #a1a1aa;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .sign-btn {
+            background: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .sign-btn:hover {
+            background: #d4af37;
+            color: #05070a;
+        }
+
+        /* ہیرو سیکشن (لگژری بینر) */
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 70px;
+            background: radial-gradient(circle at center, #111827 0%, #05070a 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .hero h3 {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            max-width: 550px;
+            line-height: 1.6;
+        }
+
+        /* گیلری اور سلائیڈر سیکشن */
+        .gallery-section {
+            padding: 60px 0;
+            text-align: center;
+            background: #070a0f;
+        }
+
+        .gallery-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #f3f4f6;
+            letter-spacing: 2px;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .slider-track {
+            display: flex;
+            gap: 30px;
+            width: max-content;
+            animation: luxuryScroll 25s linear infinite;
+        }
+
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* لگژری فریم کارڈ */
+        .slide {
+            width: 280px;
+            height: 380px;
+            background: #0d121c;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .slide:hover img {
+            transform: scale(1.05);
+        }
+
+        @keyframes luxuryScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* فوٹر */
+        footer {
+            padding: 25px;
+            background: #030406;
+            color: #6b7280;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            letter-spacing: 1px;
+        }
+
+        /* موبائل کے لیے رسپانسو */
+        @media(max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            nav {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .slide {
+                width: 220px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Mudassar <span>Visuals</span></div>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#gallery">COLLECTIONS</a>
+            <a href="#about">ABOUT</a>
+        </nav>
+        <button class="sign-btn">SIGN IN</button>
+    </header>
+
+    <section id="home" class="hero">
+        <h3>SIGNATURE SERIES</h3>
+        <h1>The Masterpiece</h1>
+        <p>A quiet confidence. Mastery of web and photo editing crafted for those who prefer to leave a subtle, lasting impression.</p>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2>Curated Gallery</h2>
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slide"><img src="3.JPG" alt="Project"></div>
+                <div class="slide"><img src="4.JPG" alt="Project"></div>
+                <div class="slide"><img src="5.JPG" alt="Project"></div>
+                <div class="slide"><img src="6.JPG" alt="Project"></div>
+                <div class="slide"><img src="7.JPG" alt="Project"></div>
+                <div class="slide"><img src="8.JPG" alt="Project"></div>
+                <div class="slide"><img src="9.JPG" alt="Project"></div>
+                
+                <div class="slide"><img src="3.JPG" alt="Project"></div>
+                <div class="slide"><img src="4.JPG" alt="Project"></div>
+                <div class="slide"><img src="5.JPG" alt="Project"></div>
+                <div class="slide"><img src="6.JPG" alt="Project"></div>
+                <div class="slide"><img src="7.JPG" alt="Project"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mudassar Abbas Visuals. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
